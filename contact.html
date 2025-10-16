@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="portfolio.html" class="dropbtn">Portfolio</a>
+                    <div class="dropdown-content">
+                        <a href="portfolio.html">Project Data</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact-info">
+            <h2>My Contact Information</h2>
+            <p><strong>Phone:</strong> +62812-2070-6429</p>
+            <p><strong>Email:</strong>dvidlieagatha@gmail.com</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form action="#">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="service">Service:</label>
+                <select id="service" name="service">
+                    <option value="web-development">Web Development</option>
+                    <option value="consultation">Technology Consultation</option>
+                    <option value="portfolio-review">Portfolio Review</option>
+                </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the terms and conditions</label>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Link to <a href="https://itpln.ac.id">ITPLN</a></p>
+    </footer>
+</body>
+</html>
