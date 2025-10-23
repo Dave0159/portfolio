@@ -1,27 +1,54 @@
-# Website Portofolio Pribadi
+# Portofolio — David Lie Agatha
 
-Ini adalah website portofolio pribadi yang dibuat untuk menampilkan proyek dan keahlian saya. Website ini dibangun dengan HTML dan CSS.
+Situs portofolio pribadi ini dibuat untuk tugas Responsive Web Design di Institut Teknologi PLN. Menampilkan halaman Beranda, Portofolio, dan Kontak dengan desain responsif serta navigasi hamburger untuk perangkat mobile.
 
-## Fitur
+Live demo (setelah deploy): https://your-username.github.io/your-repo-name/
 
-- **Halaman Utama:** Pengenalan yang ramah dengan foto profil dan biografi singkat.
-- **Halaman Portofolio:** Galeri proyek dengan deskripsi, teknologi yang digunakan, dan tautan ke demo langsung.
-- **Halaman Kontak:** Formulir untuk menghubungi, beserta informasi kontak lainnya.
-- **Desain Responsif:** Website ini dirancang untuk berfungsi di berbagai perangkat, termasuk desktop, tablet, dan ponsel.
+---
 
-## Memulai
+## Tautan File Penting
+- Halaman: [index.html](index.html), [portfolio.html](portfolio.html), [contact.html](contact.html)  
+- Stylesheet: [css/style.css](css/style.css)  
+- JavaScript (menu mobile): [`document.addEventListener('DOMContentLoaded')`](Javascript/script.js) — [Javascript/script.js](Javascript/script.js)  
+- Folder gambar: [images/](images/)
 
-Untuk melihat portofolio, cukup buka file `index.html` di browser web Anda. Tidak diperlukan pengaturan khusus.
+---
 
-Teknologi yang Digunakan
+## Fitur Utama
+- Multi-halaman: Beranda, Portofolio, Kontak.
+- Desain responsif (desktop ↔ mobile).
+- Hamburger menu dengan logika di [Javascript/script.js](Javascript/script.js).
+- Tabel portofolio yang responsif menggunakan [css/style.css](css/style.css).
+- Form kontak sederhana di [contact.html](contact.html).
 
-- **HTML5:** Untuk struktur dan konten website.
-- **CSS3:** Untuk gaya dan tata letak, termasuk desain responsif.
+---
 
-## Struktur File
+## Cara Menjalankan Secara Lokal
+1. Clone repo:
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   ```
 
-- `index.html`: Halaman arahan utama.
-- `portfolio.html`: Halaman yang menampilkan proyek.
-- `contact.html`: Halaman dengan formulir kontak.
-- `css/style.css`: Stylesheet untuk website.
-- `images/`: Folder untuk menyimpan gambar.
+2. Masuk ke direktori proyek:
+   ```bash
+   cd your-repo-name
+   ```
+
+3. Buka `index.html` di browser Anda.
+
+---
+
+## Cara Deploy ke GitHub Pages
+Proyek ini sempurna untuk hosting gratis dengan GitHub Pages.
+
+1.  Dorong semua file proyek Anda (`.html`, `.css`, `.js`, `images`) ke repositori GitHub Anda.
+2.  Di repositori Anda, buka tab **Settings**.
+3.  Pilih **Pages** dari menu sebelah kiri.
+4.  Di bawah "Build and deployment," pilih untuk **Deploy from a branch**.
+5.  Pilih cabang `main` (atau `master`) dan folder `/(root)`, lalu klik **Save**.
+6.  Setelah beberapa saat, URL langsung Anda akan ditampilkan di bagian atas pengaturan Pages.
+
+---
+
+## Lisensi
+Proyek ini dilisensikan di bawah Lisensi MIT.
