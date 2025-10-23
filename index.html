@@ -1,54 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Portfolio</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Portofolio Saya</title>
+    <!-- Tautkan Google Font (Inconsolata) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Consistent Header across all pages -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Portofolio.</a>
+            
+            <!-- Navigation -->
+            <nav class="site-nav">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="active">Beranda</a></li>
+                    <li><a href="portfolio.html">Portofolio</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Buka menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
     </header>
 
+    <!-- Main Content of the Home Page -->
     <main>
-      <section id="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <img
-          src="images/WhatsApp Image 2025-10-06 at 14.20.00.jpeg"
-          alt="My Photo"
-          style="width: 150px; height: 150px; border-radius: 50%"
-        />
-        <p>Teknik Informatika di ITPLN</p>
-      </section>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-text">
+                    <h1>Halo, Saya David lie agatha</h1>
+                    <p class="subtitle">Mahasiswa Teknik Informatika ITPLN</p>
+                    <p>Selamat datang di website saya.</p>
+                    <a href="contact.html" class="btn">Hubungi Saya</a>
+                </div>
+                <img src="images/WhatsApp Image 2025-10-06 at 14.20.00.jpeg" alt="Foto profil [Nama Mahasiswa]" class="hero-image">
+            </div>
+        </section>
 
-      <section id="about">
-        <h2>About Me</h2>
-        <p>
-          Nama saya David lie agatha, dalam dunia kreatif saya adalah orang yang
+        <!-- About Me Section -->
+        <section class="about container">
+            <h2>Tentang Saya</h2>
+            <p>Saya adalah mahasiswa aktif di Institut Teknologi PLN (ITPLN). Dalam dunia kreatif saya adalah orang yang
           aktif dalam mempelajari berbagai hal hal baru mulai dari cara mebentuk
           proporsi, pewarnaan, shading, bahkan aestetika gambar itu sendiri.
           Maka dari itu saya bisa berkata saya adalah orang yang aktif dalam
-          dunia kreatif.
+          dunia kreatif.</p>
         </p>
-      </section>
+            <p><strong>Pendidikan:</strong> S1 Teknik Informatika, Institut Teknologi PLN (2024 - Sekarang)</p>
+        </section>
 
-      <section id="skills">
-        <h2>Skills</h2>
-        <p>Illustration</p>
-        <p>Digital Design</p>
-        <p>Junior game Dev</p>
-      </section>
+        <!-- Skills Section -->
+        <section class="skills container">
+            <h2>Keahlian Saya</h2>
+            <div class="skills-grid">
+                <!-- Skill 1 -->
+                <article class="skill-card">
+                    <h3>Game Development</h3>
+                    <p>junior game dev sejak 2024.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 30%;">30%</div>
+                    </div>
+                 <!-- Skill 2 -->   
+                </article>
+                <article class="skill-card">
+                    <h3>Web-Dev</h3>
+                    <p>Junior web dev sejak 2025.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 20%;">20%</div>
+                    </div>
+                </article>
+                <!-- Skill 3 -->
+                <article class="skill-card">
+                    <h3>Digital Design</h3>
+                    <p>Desain grafis, poster. dan logo.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%;">50%</div>
+                    </div>
+                </article>
+                <!-- Skill 4 -->
+                <article class="skill-card">
+                    <h3>Writing</h3>
+                    <p>Penulisan artikel, blog, dan artikel teknis.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%;">70%</div>
+                    </div>
+                </article>
+                <!-- Skill 5 -->
+                <article class="skill-card">
+                    <h3>Ilustration</h3>
+                    <p>Gambar digital maupun Gambar tradisional.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;">80%</div>
+                    </div>
+                </article>
+            </div>
+        </section>
     </main>
 
-    <footer>
-      <p>Link to <a href="https://itpln.ac.id">ITPLN</a></p>
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 Dibuat oleh David lie agatha.</p>
+            <a href="https://itpln.ac.id/" target="_blank">Institut Teknologi PLN</a>
+        </div>
     </footer>
-  </body>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="Javascript/script.js"></script>
+</body>
 </html>
