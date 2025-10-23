@@ -2,7 +2,7 @@
 
 Situs portofolio pribadi ini dibuat untuk tugas Responsive Web Design di Institut Teknologi PLN. Menampilkan halaman Beranda, Portofolio, dan Kontak dengan desain responsif serta navigasi hamburger untuk perangkat mobile.
 
-Live demo (setelah deploy): https://your-username.github.io/your-repo-name/
+Live demo (setelah deploy): [https://dave0159.github.io/portfolio/](https://dave0159.github.io/portfolio/)
 
 ---
 
@@ -51,4 +51,4 @@ Proyek ini sempurna untuk hosting gratis dengan GitHub Pages.
 ---
 
 ## Lisensi
-Proyek ini dilisensikan di bawah Lisensi MIT.
+[ITPLN](itpln.ac.id)
