@@ -1,179 +1,466 @@
-/* Basic Styles */
-body {
-    font-family: sans-serif;
+/* =================================
+   1. Variables & Global Reset
+   ================================= */
+:root {
+    /* Color Palette */
+    --primary-color: #0097a7; /* Teal */
+    --primary-dark: #00796b;
+    --dark-color: #263238; /* Dark Grey */
+    --light-color: #f4f7f6; /* Off-white */
+    --white-color: #ffffff;
+    --text-color: #333;
+    --grey-color: #aaa;
+    --border-color: #e0e0e0;
+
+    /* UI Elements */
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --border-radius: 8px;
+}
+
+/* Simple Reset */
+* {
     margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-/* Header and Navigation */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
     padding: 0;
-    margin: 0;
-    background-color: #333;
-    text-align: center;
+    box-sizing: border-box;
 }
 
-nav ul li {
-    display: inline-block;
-    position: relative;
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
 }
 
-nav ul li a {
-    display: block;
-    padding: 20px;
-    color: white;
-    text-decoration: none;
+/* Body Styling */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light-color);
+    color: var(--text-color);
+    line-height: 1.7;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Main Content */
-main {
-    padding: 20px;
-    max-width: 1200px;
+/* Container for centered content */
+.container {
+    width: 90%;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-/* Hero Section */
-#hero {
-    text-align: center;
-    padding: 50px 20px;
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-/* About and Skills Sections */
-#about, #skills, #portfolio, #contact, #contact-info {
-    background-color: #fff;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 5px;
+/* Link Styling */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
-/* Portfolio Table */
-table {
-    width: 100%;
-    border-collapse: collapse;
+/* Heading Styling */
+h1, h2, h3 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    line-height: 1.3;
 }
 
-th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
+h1 { font-size: 2.5rem; font-weight: 700; }
+h2 { font-size: 2rem; font-weight: 700; border-bottom: 3px solid var(--primary-color); display: inline-block; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+h3 { font-size: 1.25rem; font-weight: 700; }
+p { margin-bottom: 1rem; }
+
+/* =================================
+   2. Header & Navigation
+   ================================= */
+.site-header {
+    background-color: var(--white-color);
+    box-shadow: var(--shadow);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-th {
-    background-color: #f2f2f2;
-}
-
-/* Contact Form */
-form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-form input, form select, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-form button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.checkbox-wrapper {
+.header-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.checkbox-wrapper input[type="checkbox"] {
-    width: auto;
-    margin-right: 10px;
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
 }
 
-/* Footer */
-footer {
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.nav-links a.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    font-weight: 700;
+}
+
+.hamburger-btn {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* =================================
+   3. Button
+   ================================= */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* =================================
+   4. Home Page (Hero, About, Skills)
+   ================================= */
+.hero {
+    background-color: var(--white-color);
+    padding: 4rem 0;
+    margin-bottom: 2rem;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero .subtitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.hero-image {
+    flex-basis: 350px;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    box-shadow: var(--shadow);
+}
+
+.about, .skills, .page-section {
+    padding: 2rem;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.skill-card {
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    transition: all 0.2s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: var(--border-color);
+    border-radius: 20px;
+    margin-top: 1rem;
+}
+
+.progress {
+    height: 20px;
+    line-height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    color: var(--white-color);
+    font-size: 0.8rem;
+    font-weight: 500;
     text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
 }
 
-/* Responsive Design */
+/* =================================
+   5. Portfolio Page (Table)
+   ================================= */
+.table-wrapper {
+    overflow-x: auto; /* Key for responsive table */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Force scroll if screen < 600px */
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+thead {
+    background-color: var(--light-color);
+    font-weight: 700;
+}
+
+tbody tr:hover {
+    background-color: #fcfcfc;
+}
+
+.status-selesai {
+    background-color: #e0f2f1; /* Light green */
+    color: #00796b;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.status-belum {
+    background-color: #fff3e0; /* Light orange */
+    color: #f57c00;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.btn-sm {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+.btn-sm:hover {
+    background-color: var(--primary-dark);
+}
+.btn-disabled {
+    background-color: var(--grey-color);
+    cursor: not-allowed;
+}
+
+/* =================================
+   6. Contact Page (Form)
+   ================================= */
+.contact-form {
+    max-width: 700px;
+    margin-top: 2rem;
+}
+
+.form-group, .form-group fieldset {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label, .form-group legend {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 151, 167, 0.3);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+}
+.radio-group label, .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+}
+
+/* =================================
+   7. Footer
+   ================================= */
+.site-footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 2rem;
+}
+.site-footer a {
+    color: var(--white-color);
+    font-weight: 500;
+}
+
+/* =================================
+   8. Responsive (RWD)
+   ================================= */
 @media (max-width: 768px) {
-    table, thead, tbody, th, td, tr {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+
+    /* Rules for Hamburger Menu */
+    .nav-links {
+        display: none; /* Hide menu on mobile */
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: 67px; /* Adjust to header height */
+        left: 0;
+        width: 100%;
+        background-color: var(--white-color);
+        box-shadow: var(--shadow);
+    }
+    .nav-links.active {
+        display: flex; /* Show when clicked */
+    }
+    .nav-links li {
+        width: 100%;
+    }
+    .nav-links a {
         display: block;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .nav-links a:hover, .nav-links a.active {
+        background-color: var(--light-color);
+        border-bottom-color: var(--border-color);
     }
 
-    thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
+    .hamburger-btn {
+        display: block; /* Show hamburger button */
+    }
+    
+    /* Hamburger animation to 'X' */
+    .hamburger-btn.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-btn.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 
-    tr {
-        border: 1px solid #ccc;
-        margin-bottom: 10px;
+    /* RWD for Pages */
+    .hero-container {
+        flex-direction: column-reverse; /* Image on top, text below */
+        text-align: center;
+    }
+    .hero-image {
+        flex-basis: auto;
+        width: 80%;
+        max-width: 300px;
     }
 
-    td {
+    .skills-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+
+    /* RWD for Portfolio Table */
+    .table-wrapper {
         border: none;
-        border-bottom: 1px solid #eee;
-        position: relative;
-        padding-left: 50%;
-        text-align: right;
+        box-shadow: none;
     }
-
-    td:before {
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        text-align: left;
-        font-weight: bold;
+    table {
+        min-width: 0;
     }
-
-    td:nth-of-type(1):before { content: "Project Name"; }
-    td:nth-of-type(2):before { content: "Year"; }
-    td:nth-of-type(3):before { content: "Technology"; }
-    td:nth-of-type(4):before { content: "Status"; }
-    td:nth-of-type(5):before { content: "Link"; }
+    thead {
+        display: none; /* Hide table header */
+    }
+    tr {
+        display: block;
+        margin-bottom: 1.5rem;
+        background: var(--white-color);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+    }
+    td {
+        display: block;
+        text-align: right; /* Align value to the right */
+        padding: 0.75rem 1rem;
+        border-bottom: 1px dotted var(--border-color);
+    }
+    td:last-child {
+        border-bottom: none;
+    }
+    /* Add label from 'data-label' */
+    td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: 700;
+        color: var(--dark-color);
+        margin-right: 1rem;
+    }
 }
