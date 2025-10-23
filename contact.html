@@ -1,65 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
+    <title>Kontak - Portofolio Saya</title>
+    <!-- Tautkan Google Font (Inconsolata) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="portfolio.html" class="dropbtn">Portfolio</a>
-                    <div class="dropdown-content">
-                        <a href="portfolio.html">Project Data</a>
-                    </div>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+
+    <!-- Consistent Header across all pages -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Portofolio.</a>
+            
+            <!-- Navigation -->
+            <nav class="site-nav">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="portfolio.html">Portofolio</a></li>
+                   
+                    <li><a href="contact.html" class="active">Kontak</a></li>
+                </ul>
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Buka menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
     </header>
 
+    <!-- Main Content of the Contact Page -->
     <main>
-        <section id="contact-info">
-            <h2>My Contact Information</h2>
-            <p><strong>Phone:</strong> +62812-2070-6429</p>
-            <p><strong>Email:</strong>dvidlieagatha@gmail.com</p>
-        </section>
+        <section class="container page-section">
+            <h1>Hubungi Saya</h1>
+            <p>Ada proyek yang ingin Anda diskusikan? Isi formulir di bawah ini untuk memesan jasa saya.</p>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <form action="#">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="service">Service:</label>
-                <select id="service" name="service">
-                    <option value="project-request">Project Request</option>
-                    <option value="consultation">Technology Consultation</option>
-                    <option value="portfolio-review">Portfolio Review</option>
-                </select>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <div class="checkbox-wrapper">
-                    <input type="checkbox" id="terms" name="terms" required>
-                    <label for="terms">I agree to the terms and conditions</label>
+            <!-- Contact Form -->
+            <form id="contact-form" class="contact-form">
+          
+                <!-- Form Group for Full Name -->
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
                 </div>
-
-                <button type="submit">Submit</button>
+           
+                <!-- Form Group for Email Address -->
+                <div class="form-group">
+                    <label for="email">Alamat Email</label>
+                    <input type="email" id="email" name="email" placeholder="email@anda.com" required>
+                </div>
+                
+                <!-- Form Group for Service Type -->
+                <div class="form-group">
+                    <label for="layanan">Jenis Layanan</label>
+                    <select id="layanan" name="layanan" required>
+                        <option value="" disabled selected>Pilih jenis layanan...</option>
+                        <option value="web-dev">Pengembangan Website</option>
+                        <option value="konsultasi">Konsultasi Teknologi</option>
+                        <option value="review">Review Portofolio</option>
+                    </select>
+                </div>
+                
+                <!-- Form Group for Project Description -->
+                <div class="form-group">
+                    <label for="pesan">Deskripsi Proyek</label>
+                    <textarea id="pesan" name="pesan" rows="5" placeholder="Jelaskan kebutuhan proyek Anda..." required></textarea>
+                </div>
+                
+                <!-- Fieldset for Preferred Contact Method -->
+                <fieldset class="form-group">
+                    <legend>Metode Kontak Pilihan</legend>
+                    <div class="radio-group">
+                        <label><input type="radio" name="metode-kontak" value="email" checked> Email</label>
+                        <label><input type="radio" name="metode-kontak" value="whatsapp"> WhatsApp</label>
+                    </div>
+                </fieldset>
+               
+                <!-- Form Group for Terms and Conditions -->
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="terms" required>
+                        Saya setuju dengan syarat dan ketentuan yang berlaku.
+                    </label>
+                </div>
+                <button type="submit" class="btn">Kirim Permintaan</button>
             </form>
+
         </section>
     </main>
 
-    <footer>
-        <p>Link to <a href="https://itpln.ac.id">ITPLN</a></p>
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 Dibuat oleh David Lie Agatha.</p>
+            <a href="https://itpln.ac.id/" target="_blank">Institut Teknologi PLN</a>
+        </div>
     </footer>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="Javascript/script.js"></script>
 </body>
 </html>
