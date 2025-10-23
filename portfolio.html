@@ -1,83 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portofolio - Portofolio Saya</title>
+    <!-- Tautkan Google Font (Inconsolata) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="portfolio.html" class="dropbtn">Portfolio</a>
-                    <div class="dropdown-content">
-                        <a href="portfolio.html">Project Data</a>
-                    </div>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+
+    <!-- Consistent Header across all pages -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Portofolio.</a>
+            
+            <!-- Navigation -->
+            <nav class="site-nav">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="portfolio.html" class="active">Portofolio</a></li> 
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Buka menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
     </header>
 
+    <!-- Main Content of the Portfolio Page -->
     <main>
-        <section id="portfolio">
-            <h2>My Portfolio</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Project Name</th>
-                        <th>Year</th>
-                        <th>Technology</th>
-                        <th>Status</th>
-                        <th>Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Game development</td>
-                        <td>2025</td>
-                        <td>Unity, C#</td>
-                        <td>Ongoing</td>
-                        <td><a href="https://github.com/Dave0159/Game-Dev.git">Sample</a></td>
-                    </tr>
-                    <tr>
-                        <td>DnD Game Management</td>
-                        <td>2025</td>
-                        <td>Html, CSS, Javascript</td>
-                        <td>In Progress</td>
-                        <td><a href="https://dave0159.github.io/project1/">Sample</a></td>
-                    </tr>
-                    <tr>
-                        <td>Digital Design</td>
-                        <td>2023</td>
-                        <td>Photoshop</td>
-                        <td>Completed</td>
-                        <td><a href="https://drive.google.com/file/d/1J9_j59annbjq0Z1xaKeI02ikRsFklD6d/view?usp=drivesdk">Sample</a></td>
-                    </tr>
-                    <tr>
-                        <td>Writing</td>
-                        <td>2023</td>
-                        <td>Online medium</td>
-                        <td>Ongoing</td>
-                        <td><a href="https://telegra.ph/Gelap-Laut-08-02">Read</a></td>
-                    </tr>
-                    <tr>
-                        <td>Digital Illustration</td>
-                        <td>2020</td>
-                        <td>ibis paint</td>
-                        <td>Completed</td>
-                        <td><a href="https://www.instagram.com/gokaiger_ryuu?igsh=MXkya29nbnZ5YXdxOQ==">Sample</a></td>
-                    </tr>
-                </tbody>
-            </table>
+        <section class="container page-section">
+            <h1>Portofolio Proyek</h1>
+            <p>Berikut adalah beberapa proyek yang telah saya kerjakan, baik untuk tugas kuliah maupun proyek pribadi.</p>
+
+            <!-- Wrapper for the responsive table -->
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama Proyek</th>
+                            <th>Tahun</th>
+                            <th>Teknologi</th>
+                            <th>Status</th>
+                            <th>Link Demo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Project 1 -->
+                        <tr>
+                            <td data-label="Proyek">TopDown Roguelike Game dev</td>
+                            <td data-label="Tahun">2024</td>
+                            <td data-label="Teknologi">Unity, C#</td>
+                            <td data-label="Status"><span class="status-belum">Belum</span></td>
+                            <td data-label="Demo"><a href="https://github.com/Dave0159/Game-Dev.git" class="btn-sm btn-disabled">N/A</a></td>
+                        </tr>
+                        <!-- Project 2 -->
+                        <tr>
+                            <td data-label="Proyek">Dnd Game Management</td>
+                            <td data-label="Tahun">2024</td>
+                            <td data-label="Teknologi">HTML,CSS,Javascript</td>
+                            <td data-label="Status"><span class="status-belum">Belum</span></td>
+                            <td data-label="Demo"><a href="https://dave0159.github.io/project1/" class="btn-sm">View</a></td>
+                        </tr>
+                        <!-- Project 3 -->
+                        <tr>
+                            <td data-label="Proyek">Digital design</td>
+                            <td data-label="Tahun">2025</td>
+                            <td data-label="Teknologi">Photoshop, canva</td>
+                            <td data-label="Status"><span class="status-selesai">Selesai</span></td>
+                            <td data-label="Demo"><a href="https://drive.google.com/file/d/1J9_j59annbjq0Z1xaKeI02ikRsFklD6d/view?usp=drivesdk" class="btn-sm">view</a></td>
+                        </tr>
+                        <!-- Project 4 -->
+                        <tr>
+                            <td data-label="Proyek">digital Illustration</td>
+                            <td data-label="Tahun">2022</td>
+                            <td data-label="Teknologi">Ibis Paint</td>
+                            <td data-label="Status"><span class="status-selesai">Selesai</span></td>
+                            <td data-label="Demo"><a href="https://www.instagram.com/gokaiger_ryuu?igsh=MXkya29nbnZ5YXdxOQ==" class="btn-sm">view</a></td>
+                        </tr>
+                        <!-- Project 5 -->
+                        <tr>
+                            <td data-label="Proyek">Online writing</td>
+                            <td data-label="Tahun">2024</td>
+                            <td data-label="Teknologi">Telegraph</td>
+                            <td data-label="Status"><span class="status-selesai">Selesai</span></td>
+                            <td data-label="Demo"><a href="https://telegra.ph/Gelap-Laut-08-02" class="btn-sm">view</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </section>
     </main>
 
-    <footer>
-        <p>Link to <a href="https://itpln.ac.id">ITPLN</a></p>
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Dibuat oleh David Lie Agatha</p>
+            <a href="https://itpln.ac.id/" target="_blank">Institut Teknologi PLN</a>
+        </div>
     </footer>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="Javascript/script.js"></script>
 </body>
 </html>
